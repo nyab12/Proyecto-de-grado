@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arma tu menú</title>
+    <link rel="stylesheet" href="estilos_arma_tu_menu.css">
+</head>
+    <main>
+    <header class="header">
+        <div class="logo">
+            <img src="Imágenes/logo.png" alt="">
+        </div>
+        <nav>
+            <ul class="navegacion">
+                <li><a href="Index.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#">Grupos de alimentos</a>
+                    <ul class="alimentos">
+                        <li><a href="Cereales.html">Cereales</a></li>
+                        <li><a href="Frutas.html">Frutas</a></li>
+                        <li><a href="Lácteos.html">Lácteos</a></li>
+                        <li><a href="Legumbres.html">Legumbres</a></li>
+                        <li><a href="Proteínas.html">Proteínas</a></li>
+                        <li><a href="Verduras.html">Verduras</a></li>
+                    </ul>
+                </li>
+                <li><a href="Juegos.html">Juegos</a></li>
+                <li><a href="Arma tu menú.html">Arma tu menú</a></li>
+            </ul>
+        </nav>
+    </main>
+<body>
+<main>
+    <!-- Buscador por nombre -->
+     <div id="buscador">
+        <input type="text" id="inputBuscar" placeholder="Buscar producto..."
+      oninput="buscarProducto()">
+     </div>
+
+    <!-- Filtros por categoría -->
+     <div id="filtros">
+        <button onclick="mostrarTodos()">Todos</button>
+        <button onclick="filtrarPorCategoria('cereales')">Cereales</button>
+        <button onclick="filtrarPorCategoria('frutas')">Frutas</button>
+        <button onclick="filtrarPorCategoria('lacteos')">Lácteos</button>
+        <button onclick="filtrarPorCategoria('legumbres')">Legumbres</button>
+        <button onclick="filtrarPorCategoria('proteinas')">Proteínas</button>
+        <button onclick="filtrarPorCategoria('verduras')">Verduras</button>
+     </div>
+
+    <!-- Catálogo de productos -->
+     <div id="catalogo" class="grid"></div>
+
+<div id="seleccion-comida">
+  <label>Selecciona el tipo de comida:</label>
+  <select id="tipoComida">
+    <option value="desayuno">Desayuno</option>
+    <option value="almuerzo">Almuerzo</option>
+    <option value="cena">Cena</option>
+    <option value="onces">Onces</option>
+  </select>
+  <button onclick="guardarMenu()">Guardar menú</button>
+</div>
+
+<div id="menus">
+  <div class="menu-box" id="desayuno-box">
+    <h3>Desayuno</h3>
+    <div id="desayuno"></div>
+  </div>
+  <div class="menu-box" id="almuerzo-box">
+    <h3>Almuerzo</h3>
+    <div id="almuerzo"></div>
+  </div>
+  <div class="menu-box" id="cena-box">
+    <h3>Cena</h3>
+    <div id="cena"></div>
+  </div>
+  <div class="menu-box" id="onces-box">
+    <h3>Onces</h3>
+    <div id="onces"></div>
+  </div>
+</div>
+
+<h3 class="titulo-historial">Historial de menús</h3>
+<div id="historial"></div>
+</main>
+
+    <script src="usuarios.js"></script>
+    <script src="Data/Productos.js"></script>
+    <script src="menu.js"></script>
+
+<footer>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <a class="instagram-link" href="https://www.instagram.com/health_navigators_?igsh=aWN3dTNnN3cyMGgy" target="_blank">
+    <i class="fab fa-instagram"></i>Contáctanos por Instagram</a>
+    <br>
+    <br>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <a class="whatsapp-link" href="https://wa.me/573133268470" target="_blank">
+    <i class="fab fa-whatsapp"></i>Contáctanos por WhatsApp</a>
+    <br> 
+    <br>
+  <h4>&copy; Health Navigators. Todos los derechos reservados</h4>
+</footer>
+</body>
+</html>

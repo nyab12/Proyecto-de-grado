@@ -1,0 +1,111 @@
+/* Paleta de colores saludables */
+:root {
+  --verde-claro: #82e050;   /* verde claro */
+  --verde-fresco: #91d56f;  /* verde fresco */
+  --verde-oscuro: #297802;  /* verde oscuro */
+  --verde-medio: #bbfa9c;   /* verde medio */
+  --naranja: #f69240;       /* naranja suave */
+  --amarillo: #f5de46;      /* amarillo cálido */
+  --blanco: #ffffff;        /* blanco */
+  --gris-claro: #eeeeee;    /* gris claro */
+  --negro: #000000;         /* negro */
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin: 0;
+  min-height: 90vh;
+}
+
+/* Fondo visible solo durante el juego */
+body.juego {
+  background-image: url(imagenes/fondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fondo desaparece al finalizar */
+body.finalizado {
+  background: var(--gris-claro);
+}
+
+.contenedor {
+  text-align: center;
+  background: var(--blanco);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 15px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.carta {
+  background-color: var(--amarillo);
+  border-radius: 12px;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: var(--negro);
+  transition: background 0.3s;
+}
+
+.carta.volteada {
+  background-color: var(--gris-claro);
+  cursor: pointer;
+}
+
+.carta img {
+  max-width: 80%; 
+  max-height: 80%; 
+}
+
+button {
+  border-radius: 10px;
+  background-color: rgb(246, 242, 144);
+  border-color: rgb(246, 242, 144);
+  color: var(--negro);
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#felicitaciones {
+  display: none;                
+  position: fixed;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--amarillo); 
+  border-radius: 16px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--negro);
+  z-index: 1000; /* encima del tablero */
+}
+
+#felicitaciones button {
+  margin-top: 15px;
+}
+
+#felicitaciones img {
+  width: 100px;
+}

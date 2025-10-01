@@ -1,0 +1,86 @@
+/* Paleta de colores saludables */
+:root {
+  --verde-claro: #82e050;   /* verde claro */
+  --verde-fresco: #91d56f;  /*verde fresco */
+  --verde-oscuro: #297802;  /* verde oscuro */
+  --verde-medio: #bbfa9c;   /* verde medio */
+  --naranja: #f69240;       /* naranja suave */
+  --amarillo: #eabf52;      /* amarillo cálido */
+  --blanco: #ffffff;        /* blanco */
+  --gris-claro: #eeeeee;    /* gris claro */
+  --negro: #000000;         /* negro */
+}
+
+/* Estilos generales */
+body {
+    background-image: url(imagenes/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;      
+    background-position: center;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+  }
+  
+  /* Contenedor del quiz */
+  .contenedor {
+    position: fixed;
+    background-color: var(--blanco);
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  /* Título del quiz */
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  /* Texto de la pregunta */
+  #pregunta {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+  
+  /* Botones de opción */
+  #opciones button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 1em;
+    background-color: rgb(247, 244, 162);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* Efecto al pasar el mouse por las opciones */
+  #opciones button:hover {
+    background-color: rgb(252, 250, 96);
+  }
+  
+  /* Botón para siguiente pregunta */
+  #siguiente {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: var(--naranja);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: none; /* Oculto hasta que se responda */
+  }
+  
+  /* Resultado final */
+  #resultado {
+    font-size: 30px;
+    margin-top: 20px;
+    color: #333;
+  }

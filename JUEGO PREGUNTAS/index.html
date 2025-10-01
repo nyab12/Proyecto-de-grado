@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de preguntas</title>
+  <!-- Vinculamos el archivo de estilos -->
+  <link rel="stylesheet" href="misestilos4.css">
+</head>
+<body>
+
+  <!-- Contenedor principal de la trivia -->
+  <div class="contenedor">
+    <h1>¡Provemos cuánto has aprendido!</h1>
+
+    <!-- Aquí irá la pregunta y opciones -->
+    <div id="quiz">
+      <!-- Texto de la pregunta -->
+      <p id="pregunta">Pregunta aquí...</p>
+
+      <!-- Opciones generadas desde JS -->
+      <div id="opciones"></div>
+
+      <!-- Botón para ir a la siguiente pregunta -->
+      <button id="siguiente" onclick="siguientePregunta()">Siguiente</button>
+
+      <!-- Resultado final -->
+      <p id="resultado"></p>
+    </div>
+  </div>
+
+  <!-- Archivo JavaScript -->
+  <script src="script4.js"></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+/* Paleta de colores saludables */
+:root {
+    --verde-claro: #82e050;   /* verde claro */
+    --verde-fresco: #91d56f;  /*verde fresco */
+    --verde-oscuro: #44921c;  /* verde oscuro */
+    --verde-medio: #e8ffdddd;   /* verde medio */
+    --naranja: #f69240;       /* naranja suave */
+    --amarillo: #eabf52;      /* amarillo cálido */
+    --blanco: #ffffff;        /* blanco */
+    --gris-claro: #eeeeee;    /* gris claro */
+    --negro: #000000;         /* negro */
+}
+
+/* Reset básico */                      
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gris-claro);
+    color: var(--verde-oscuro); 
+    font-size: 18px;
+    display: grid;
+    place-items: center; 
+    height: 100vh;      
+         
+}
+
+
+h2 {
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+
+h4  {
+    color: var(--negro);
+}
+
+p {
+    padding: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: var(--negro);
+    font-size: 20px;
+}
+
+/* Header y logo */
+.header {
+    background-color: var(--verde-claro);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+   height: 80px;
+   width: 120px;
+}
+
+/* Navegación */
+nav ul.navegacion {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+/* Enlaces principales */
+nav ul.navegacion > li > a {
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+nav ul.navegacion > li > a:hover {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
+
+/* Submenú */
+.submenu {
+    position: relative;
+}
+
+.submenu:hover > ul.alimentos {
+    display: block;
+}
+
+/* Submenú oculto por defecto */
+ul.alimentos {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--amarillo);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    list-style: none;
+    min-width: 180px;
+}
+
+/* Items del submenú */
+ul.alimentos li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--naranja);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+ul.alimentos li a:hover {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
+
+/* Sección de productos */
+.productos {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.producto {
+    background: var(--verde-claro); 
+    border-radius: 5px;
+    padding: 1em;
+    width: 20%;
+    text-align: center;
+    transition: transform  0.3s ease, background 0.3s ease;
+    color: var(--blanco);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    cursor: pointer;
+}
+
+.producto:hover {
+    background: var(--verde-fresco); 
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgb(125, 123, 123);
+}
+
+.producto img {
+    width: 60%;
+    border-radius: 3px;
+}
+
+.producto.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chat-box {
+    width: 100%;
+    max-width: 500px;
+    background: var(--blanco);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgb(125, 123, 123);
+    
+}
+
+.mensaje-container {
+    display: flex;
+    align-items: flex-end;
+    margin: 12px 0;
+}
+
+.mensaje {
+    margin: 0 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    max-width: 70%;
+    font-size: 15px;
+    box-shadow: var(--negro);
+    opacity: 0;
+    animation: aparecer 0.8s forwards;
+}
+
+.p1 {
+    background: var(--verde-claro);
+    color: var(--negro);    
+}
+
+.p2 {
+    background: var(--naranja);
+    color: var(--blanco);
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--verde-fresco);
+}
+
+.izq { flex-direction: row; ;}
+.der { flex-direction: row-reverse; }
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ocultar contenido hasta que termine el chat */
+#contenido {
+    display: none;
+}
+
+.actions {
+    margin-top:18px;
+}
+
+.btn {
+    padding:12px; 
+    font-weight:600;
+    background: var(--verde-medio); 
+    font-size: 15px;
+    color: var(--verde-oscuro); 
+    cursor:pointer;
+    border: none;
+    border-radius: 6px;
+    transition: transform 0.15s ease;
+}
+
+.infoBox {
+    display: none;
+    margin-top: 12px;
+    background: var(--verde-oscuro);
+    border-radius: 6px;
+}
+
+.infoBox.is-open {
+    display: block;
+}
+
+.infoBox p {
+    color: var(--blanco);
+}
+
+figure {
+    display: flex;             
+    flex-direction: column;    
+    justify-content: center;  
+    align-items: center; 
+    padding: 20px;
+}
+
+video {
+    max-width: 70%;
+    max-height: 60vh;
+}
+
+figcaption {
+    color: var(--negro);
+    margin-top: 2px; 
+}  
+
+/* Contenedor general del cuadro */
+.cuadro-curiosidad {
+  background: #fefefe;
+  border: 2px solid var(--verde-claro);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Efecto al pasar el mouse */
+.cuadro-curiosidad:hover {
+  transform: scale(1.02);
+}
+
+/* Título del mensaje */
+#mensaje {
+  font-size: 1.2em;
+  color: var(--verde-oscuro);
+  text-align: center;
+}
+
+/* Texto del dato curioso */
+#display {
+  font-size: 1em;
+  color:  var(--negro);
+}
+
+/* Botón */
+#VerCuriosidades {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--verde-fresco);
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#VerCuriosidades:hover {
+  background: var(--verde-claro);
+}
+
+/* Contenedor de la figura */
+figure.map-figure {
+  margin: 1.5rem auto;
+  width: 1000px;        
+  display: block;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenedor responsivo del mapa */
+.map-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56%;
+  background: #e9eef6;
+}
+
+/* Iframe ocupa todo el espacio disponible */
+.map-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+footer {
+    text-align: center;
+    background: var(--verde-claro);
+    color: var(--blanco);
+    padding: 10px;
+}
+ 
+.instagram-link, .whatsapp-link {
+    margin-top: 0.5em;
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 20px;
+}
+
+.instagram-link:hover, .whatsapp-link:hover {
+    color: var(--verde-oscuro);
+}
+
+/* Estilos para el formulario de usuario */
+#form-usuario {
+  margin: 40px auto;
+  padding: 32px 24px;
+  max-width: 370px;
+  background: var(--verde-medio);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(68, 146, 28, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+#form-usuario:hover {
+  box-shadow: 0 12px 32px rgba(68, 146, 28, 0.18);
+}
+
+#form-usuario h3 {
+  color: var(--verde-oscuro);
+  margin-bottom: 18px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+#form-usuario input {
+  width: 90%;
+  margin: 10px 0;
+  padding: 12px 14px;
+  border: 2px solid var(--verde-claro);
+  border-radius: 8px;
+  background: var(--blanco);
+  color: var(--verde-oscuro);
+  font-size: 1em;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+#form-usuario input:focus {
+  border-color: var(--naranja);
+  box-shadow: 0 0 8px var(--naranja);
+}
+
+#form-usuario button {
+  width: 90%;
+  margin: 10px 0 0 0;
+  padding: 12px 0;
+  background: var(--verde-claro);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(68, 146, 28, 0.08);
+}
+
+#form-usuario button:hover {
+  background: var(--naranja);
+  color: var(--blanco);
+  transform: scale(1.04);
+}
+
+#mensaje-usuario {
+  margin-top: 12px;
+  color: var(--naranja);
+  font-weight: bold;
+  font-size: 1em;
+  min-height: 24px;
+  transition: color 0.2s;
+}
+
+.tarjetas-habitos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  justify-content: center;
+  margin: 40px;
+  border: 2px solid var(--verde-fresco);   
+  background-color: var(--verde-fresco); 
+  padding: 30px; 
+  border-radius: 18px;         
+}
+
+.tarjeta {
+  background: var(--verde-medio);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(68,146,28,0.10);
+  padding: 18px;
+  width: 350px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgb(186, 253, 192);
+  cursor: pointer;
+}
+.tarjeta img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+.tarjeta h4 {
+  color: var(--verde-oscuro);
+  font-size: 26px;
+}
+.tarjeta p {
+  color: var(--negro);
+  font-size: 18px;
+}

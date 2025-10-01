@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de memoria</title>
+  <link rel="stylesheet" href="misestilos7.css">
+</head>
+<body>
+  <div class="contenedor">
+  <h1>Busca y encuentra los pares iguales</h1>
+  <p>Movimientos: <span id="movimientos">0</span></p>
+  <div class="tablero" id="tablero"></div>
+  <button onclick="reiniciarJuego()">Reiniciar</button>
+</div>
+<div id="felicitaciones">
+  <img src="imagenes/buho.png" alt="">
+  <p>¡Felicitaciones!</p>
+  <p id="detalle"></p>
+  <button onclick="reiniciarJuego()">Jugar de nuevo</button>
+</div>
+
+  <script src="script7.js"></script>
+</body>
+</html>
