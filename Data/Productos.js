@@ -322,6 +322,6 @@ const productos = [
     id: 54, 
     nombre: "Zanahoria", 
     categoria: "verduras", 
-    imagen: "imgenes/zanahoria.png" 
+    imagen: "imagenes/zanahoria.png" 
   }, 
 ];
