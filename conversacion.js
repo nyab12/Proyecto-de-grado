@@ -3,12 +3,12 @@ function iniciarConversacion() {
   const contenido = document.getElementById("contenido");
 
   const mensajes = [
-    { personaje: "p1", texto: "¡Hola Capibara! Bienvenido a Health Navigators", img: "Imágenes/buho.png" },
-    { personaje: "p2", texto: "¡Hola Buho! ¿De qué trata esta página?", img: "Imágenes/capibara.png" },
-    { personaje: "p1", texto: "Esta página trata sobre los grupos de alimentos", img: "Imágenes/buho.png" },
-    { personaje: "p2", texto: "¡Qué genial! ¿También hay juegos Buho?", img: "Imágenes/capibara.png" },
-    { personaje: "p1", texto: "Sí Capibara. Encontrarás juegos para aprender jugando", img: "Imágenes/buho.png" },
-    { personaje: "p2", texto: "Perfecto, ¡vamos a descubrirlo juntos!", img: "Imágenes/capibara.png" }
+    { personaje: "p1", texto: "¡Hola Capibara! Bienvenido a Health Navigators", img: "imagenes/buho.png" },
+    { personaje: "p2", texto: "¡Hola Buho! ¿De qué trata esta página?", img: "imagenes/capibara.png" },
+    { personaje: "p1", texto: "Esta página trata sobre los grupos de alimentos", img: "imagenes/buho.png" },
+    { personaje: "p2", texto: "¡Qué genial! ¿También hay juegos Buho?", img: "imagenes/capibara.png" },
+    { personaje: "p1", texto: "Sí Capibara. Encontrarás juegos para aprender jugando", img: "imagenes/buho.png" },
+    { personaje: "p2", texto: "Perfecto, ¡vamos a descubrirlo juntos!", img: "imagenes/capibara.png" }
   ];
 
   let i = 0;
