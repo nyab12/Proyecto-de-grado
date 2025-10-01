@@ -120,6 +120,17 @@ ul.alimentos li a:hover {
     color: var(--blanco);
 }
 
+/* Para que el menú principal tenga buen alineamiento en dispositivos pequeños */
+@media (max-width: 768px) {
+    nav ul.navegacion {
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--verde-fresco);
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
+
 /* Sección de productos */
 .productos {
     display: flex;

@@ -102,6 +102,32 @@ ul.alimentos li a:hover {
     color: var(--blanco);
 }
 
+/* Para que el menú principal tenga buen alineamiento en dispositivos pequeños */
+@media (max-width: 768px) {
+    nav ul.navegacion {
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--verde-fresco);
+        padding: 10px;
+        border-radius: 8px;
+    }
+    
+    .submenu ul.alimentos {
+        position: static;
+        display: none;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .submenu:hover > ul.alimentos {
+        display: block;
+        background-color: var(--amarillo);
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+}
+
 /* Buscador */
 #buscador {
     padding: 20px;
